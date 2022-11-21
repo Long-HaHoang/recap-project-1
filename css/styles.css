@@ -61,6 +61,7 @@ header {
 main {
   /* background-color: wheat; */
   margin-top: 1em;
+  margin-bottom: 8em;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -140,16 +141,49 @@ main {
   background-color: var(--css);
 }
 
+footer {
+  border: solid;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+footer nav {
+  position: fixed;
+  bottom: 0;
+  border: solid red;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
 .nav_list {
+  /* border: solid; */
+  /* margin: 0; */
+  padding: 0;
+  border-radius: 20px;
+  background-color: var(--plt4);
   list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  height: 60%;
 }
 
 .nav_items {
-  color: blueviolet;
-  fill: blueviolet;
+  border: solid;
+  padding: 10px;
+  color: var(--bgc);
+  fill: var(--bgc);
+  height: 40%;
+  width: 30%;
 }
 
 .nav_items a {
   text-decoration: none;
   color: blueviolet;
+}
+
+.nav_items a span {
+  display: none;
 }
