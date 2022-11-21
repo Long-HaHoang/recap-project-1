@@ -8,6 +8,16 @@
   --nbg: rgb(233, 232, 232);
 }
 
+.nav_list {
+  list-style-type: none;
+}
+
 .nav_items {
-  background-color: aqua;
+  color: blueviolet;
+  fill: blueviolet;
+}
+
+.nav_items a {
+  text-decoration: none;
+  color: blueviolet;
 }
