@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.header-title {
+  position: fixed;
+  top: 0;
+  background-color: gray;
+  height: 10%;
+  width: 100%;
+}
+
+.navigation {
+  position: fixed;
+  bottom: 0;
+  background-color: gray;
+}
+
+.q-card {
+  padding: 2em;
+}
+
+.card {
+  background-color: beige;
+}
