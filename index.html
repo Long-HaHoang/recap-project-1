@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <title>Recap-Project-1</title>
   </head>
   <body>
@@ -15,25 +19,19 @@
       <ul>
         <li class="list">
           <a href="#">
-            <span class="icon">
-              <img src="/asset/icon/home.svg" alt="home-outline" />
-            </span>
+            <span class="material-symbols-outlined"> home </span>
             <span class="text">Home</span>
           </a>
         </li>
         <li class="list">
           <a href="#">
-            <span class="icon">
-              <img src="/asset/icon/favourite.svg" alt="favourite-outline" />
-            </span>
+            <span class="material-symbols-outlined"> bookmarks </span>
             <span class="text">Bookmark</span>
           </a>
         </li>
         <li class="list">
           <a href="#">
-            <span class="icon">
-              <img src="/asset/icon/account.svg" alt="acount-outline" />
-            </span>
+            <span class="material-symbols-outlined"> account_circle </span>
             <span class="text">Profile</span>
           </a>
         </li>
@@ -41,13 +39,13 @@
     </nav>
     <div class="q-card">
       <div class="card">
-        <h2 class="qustion">What property flips the axes in flexbox?</h2>
-        <a href="#">
-          <span class="fav_click">
-            <img src="/asset/icon/favourite.svg" alt="favourite-outline" />
-          </span>
+        <h2 class="question">What property flips the axes in flexbox?</h2>
+        <a class="bookmark" href="#">
+          <span class="material-symbols-outlined"> bookmark_add </span>
         </a>
         <button>Show Answer</button>
+        <button>Hide Answer</button>
+        <span class="answer">flex-direction</span>
         <ul>
           <li>#html</li>
           <li>#flexbox</li>
@@ -55,11 +53,9 @@
         </ul>
       </div>
       <div class="card">
-        <h2 class="qustion">Lorem Impsum dolor sit?</h2>
-        <a href="#">
-          <span class="fav_click">
-            <img src="/asset/icon/favourite.svg" alt="favourite-outline" />
-          </span>
+        <h2 class="question">Lorem Impsum dolor sit?</h2>
+        <a class="bookmark" href="#">
+          <span class="material-symbols-outlined"> bookmark_add </span>
         </a>
         <button>Show Answer</button>
         <ul>
@@ -70,4 +66,9 @@
       </div>
     </div>
   </body>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+    }
+  </style>
 </html>
