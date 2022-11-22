@@ -1,0 +1,11 @@
+header {
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--plt4);
+  box-shadow: 0 2px 5px rgb(148, 148, 148);
+  width: 90%;
+  border-radius: 20px;
+  color: var(--bgc);
+}
