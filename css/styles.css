@@ -89,6 +89,16 @@ main {
   width: 60%;
 }
 
+.bookmark_add {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: -6px;
+  fill: var(--plt6);
+}
+
 .button_container {
   display: flex;
   /* border: solid; */
