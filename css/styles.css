@@ -151,7 +151,7 @@ footer {
 footer nav {
   position: fixed;
   bottom: 0;
-  border: solid red;
+  /* border: solid red; */
   width: 80%;
   display: flex;
   justify-content: center;
@@ -171,12 +171,15 @@ footer nav {
 }
 
 .nav_items {
-  border: solid;
-  padding: 10px;
+  /* border: solid; */
+  margin: 0;
+  /* padding: 10px; */
   color: var(--bgc);
   fill: var(--bgc);
-  height: 40%;
-  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.8);
 }
 
 .nav_items a {
