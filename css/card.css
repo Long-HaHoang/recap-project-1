@@ -42,7 +42,7 @@ main {
 .p_answer {
   display: none;
   /* visibility: hidden; */
-  background-color: var(--bgc);
+  background-color: var(--plt1);
   width: 50%;
   height: auto;
   text-align: center;
