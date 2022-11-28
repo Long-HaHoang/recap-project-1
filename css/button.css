@@ -1,4 +1,4 @@
-.button_container {
+.qcard__button--container {
   display: flex;
   /* border: solid; */
   flex-direction: column;
@@ -7,7 +7,7 @@
   width: 50%;
 }
 
-.button_answer {
+.qcard__button--answer {
   padding: 10px;
   border-radius: 5px;
   background-color: var(--plt5);
@@ -16,6 +16,6 @@
   width: 60%;
 }
 
-.button_hide {
+.qcard__button--hide {
   display: none;
 }

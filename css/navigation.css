@@ -1,5 +1,4 @@
 footer {
-  border: solid;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -30,15 +29,10 @@ footer nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: scale(0.5);
 }
 
 .nav-list__items a {
   text-decoration: none;
-  fill: var(--plt3);
-}
-
-.nav-list__items a:hover {
   fill: var(--bgc);
 }
 

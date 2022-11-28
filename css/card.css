@@ -11,7 +11,7 @@ main {
   height: 90%;
 }
 
-.q_card {
+.qcard {
   background-color: var(--plt1);
   position: relative;
   border-radius: 10px;
@@ -24,12 +24,12 @@ main {
   color: var(--bgc);
 }
 
-.q_card_quest {
+.qcard__quest {
   text-align: center;
   width: 60%;
 }
 
-.bookmark_add {
+.qcard__bookmark--add {
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -39,7 +39,7 @@ main {
   fill: var(--plt6);
 }
 
-.p_answer {
+.qcard__answer {
   display: none;
   /* visibility: hidden; */
   background-color: var(--plt1);
@@ -48,7 +48,7 @@ main {
   text-align: center;
 }
 
-.q_card ul {
+.qcard ul {
   padding: 0;
 
   display: flex;
@@ -59,16 +59,16 @@ main {
   width: 90%;
 }
 
-.q_card ul li {
+.qcard ul li {
   padding: 3px;
   border-radius: 3px;
   color: var(--plt1);
 }
 
-.li__html {
+.qcard__li--html {
   background-color: var(--html);
 }
 
-.li__css {
+.qcard__li--css {
   background-color: var(--css);
 }
