@@ -12,50 +12,78 @@
       <h1>Quiz App</h1>
     </header>
     <main>
-      <section class="q_card">
-        <h2 class="q_card_quest">What property flips the axes in flexbox?</h2>
-        <button class="bookmark_add">
-          <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48">
+      <section class="qcard">
+        <h2 class="qcard__quest">What property flips the axes in flexbox?</h2>
+        <button class="qcard__bookmark--add" type="button">
+          <svg
+            class="qcard__svg"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 48 48"
+            height="48"
+            width="48"
+          >
             <path
               d="m35.8 17.75-5.3-5.3 2.1-2.15 3.2 3.2 7.4-7.45 2.15 2.15ZM10 42V8.75q0-1.2.9-2.1.9-.9 2.1-.9h16.8q-1.15 1.3-1.725 2.775Q27.5 10 27.5 11.75q0 3.35 2.15 5.85 2.15 2.5 5.35 3.05.85.1 1.5.1t1.5-.1V42l-14-6Z"
             />
           </svg>
         </button>
-        <div class="button_container">
-          <button class="button_answer">Show Answer</button>
-          <button class="button_answer button_hide">Hide Answer</button>
+        <div class="qcard__button--container">
+          <button class="qcard__button--answer" type="button">
+            Show Answer
+          </button>
+          <button
+            class="qcard__button--answer qcard__button--hide"
+            type="button"
+          >
+            Hide Answer
+          </button>
         </div>
-        <p class="p_answer">flex-direction</p>
+        <p class="qcard__answer">flex-direction</p>
         <ul>
-          <li class="li__html">#html</li>
-          <li class="li__css">#flexbox</li>
-          <li class="li__css">#css</li>
+          <li class="qcard__li--html">#html</li>
+          <li class="qcard__li--css">#flexbox</li>
+          <li class="qcard__li--css">#css</li>
         </ul>
       </section>
-      <section class="q_card">
+      <section class="qcard">
         <h2 class="q_card_quest">Lorem ipsum dolor?</h2>
-        <button class="bookmark_add">
-          <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48">
+        <button class="qcard__bookmark--add" type="button">
+          <svg
+            class="qcard__svg"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 48 48"
+            height="48"
+            width="48"
+          >
             <path
               d="m35.8 17.75-5.3-5.3 2.1-2.15 3.2 3.2 7.4-7.45 2.15 2.15ZM10 42V8.75q0-1.2.9-2.1.9-.9 2.1-.9h16.8q-1.15 1.3-1.725 2.775Q27.5 10 27.5 11.75q0 3.35 2.15 5.85 2.15 2.5 5.35 3.05.85.1 1.5.1t1.5-.1V42l-14-6Z"
             />
           </svg>
         </button>
-        <div class="button_container">
-          <button class="button_answer">Show Answer</button>
-          <button class="button_answer button_hide">Hide Answer</button>
+        <div class="qcard__button--container">
+          <button class="qcard__button--answer" type="button">
+            Show Answer
+          </button>
+          <button
+            class="qcard__button--answer qcard__button--hide"
+            type="button"
+          >
+            Hide Answer
+          </button>
         </div>
 
-        <p class="p_answer">
+        <p class="qcard__answer">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus
           culpa consectetur, labore voluptatem error asperiores nobis omnis,
           voluptatibus soluta, iste blanditiis ab illo eligendi alias nesciunt!
           Et officiis mollitia delectus.
         </p>
         <ul>
-          <li class="li__html">#html</li>
-          <li class="li__css">#flexbox</li>
-          <li class="li__css">#css</li>
+          <li class="qcard__li--html">#html</li>
+          <li class="qcard__li--css">#flexbox</li>
+          <li class="qcard__li--css">#css</li>
         </ul>
       </section>
     </main>
@@ -95,7 +123,24 @@
             </a>
           </li>
           <li class="nav-list__items">
-            <a href="#">
+            <a href="/html/form.html">
+              <svg
+                class="nav-list__svg"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 48 48"
+                height="48"
+                width="48"
+              >
+                <path
+                  d="M22.65 34h3v-8.3H34v-3h-8.35V14h-3v8.7H14v3h8.65ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z"
+                />
+              </svg>
+              <span>Add Form</span>
+            </a>
+          </li>
+          <li class="nav-list__items">
+            <a href="./profile.html">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="xMidYMid meet"
