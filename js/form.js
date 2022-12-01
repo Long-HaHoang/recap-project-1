@@ -2,22 +2,31 @@ console.clear();
 
 const form = document.querySelector('[data-js="form"]');
 const questInput = document.querySelector('[data-js="question"]');
+const questArea = document.querySelector('[data-js="questArea"]');
 const answerInput = document.querySelector('[data-js="answer"]');
+const answerArea = document.querySelector('[data-js="answerArea"]');
 const mainConent = document.querySelector('[data-js="mainContent"]');
 
-// questInput.addEventListener("input", () => {
+questArea.textContent = questInput.maxLength + " characters left";
+answerArea.textContent = questInput.maxLength + " characters left";
 
-//     console.log(questInput.value);
-// })
+questInput.addEventListener("input", () => {
+  const leftOnes = questInput.maxLength - questInput.value.length;
+  questArea.textContent = `${leftOnes} characters left`;
+});
 
-// answerInput.addEventListener("input", () => {
-//     console.log(answerInput.value);
-// })
+answerInput.addEventListener("input", () => {
+  const leftOnes = answerInput.maxLength - answerInput.value.length;
+  answerArea.textContent = `${leftOnes} characters left`;
+});
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   addCard(questInput.value, answerInput.value);
   form.reset();
+  questArea.textContent = questInput.maxLength + " characters left";
+  answerArea.textContent = questInput.maxLength + " characters left";
+  questInput.focus();
 });
 
 function addCard(question, answer) {
