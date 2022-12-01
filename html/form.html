@@ -16,42 +16,71 @@
     <main class="mainContent" data-js="mainContent">
       <form class="cardForm" data-js="form">
         <fieldset>
-          <legend>Your question:</legend>
-          <textarea
-            name="question"
-            id="question"
-            cols="30"
-            rows="5"
-            data-js="question"
-            minlength="4"
-            maxlength="150"
-            required
-          ></textarea>
-          <p data-js="questArea"></p>
+          <label for="question">
+            <legend>Your question:</legend>
+            <textarea
+              name="question"
+              id="question"
+              cols="30"
+              rows="5"
+              data-js="question"
+              minlength="4"
+              maxlength="150"
+              placeholder="Type in your question..."
+              required
+            ></textarea>
+            <p data-js="questArea"></p
+          ></label>
         </fieldset>
         <fieldset>
-          <legend>Your answer:</legend>
-          <textarea
-            name="answer"
-            id="answer"
-            cols="30"
-            rows="5"
-            data-js="answer"
-            minlength="4"
-            maxlength="150"
-            required
-          ></textarea>
-          <p data-js="answerArea"></p>
+          <label for="answer">
+            <legend>Your answer:</legend>
+            <textarea
+              name="answer"
+              id="answer"
+              cols="30"
+              rows="5"
+              data-js="answer"
+              minlength="4"
+              maxlength="150"
+              placeholder="Type in your answer..."
+              required
+            ></textarea>
+            <p data-js="answerArea"></p
+          ></label>
         </fieldset>
         <fieldset class="cardForm__tags">
           <legend>Tag:</legend>
-          <ul>
-            <li><button type="button">#html</button></li>
-            <li><button type="button">#flexbox</button></li>
-            <li><button type="button">#css</button></li>
-          </ul>
+          <div>
+            <button
+              type="button"
+              class="cardForm__tagHTML cardForm__button"
+              data-js="cardForm__tagButton"
+              data-state="deactivated"
+            >
+              #html
+            </button>
+            <button
+              type="button"
+              class="cardForm__tagCSS cardForm__button"
+              data-js="cardForm__tagButton"
+              data-state="deactivated"
+            >
+              #flexbox
+            </button>
+            <button
+              type="button"
+              class="cardForm__tagCSS cardForm__button"
+              data-js="cardForm__tagButton"
+              data-state="deactivated"
+            >
+              #css
+            </button>
+          </div>
         </fieldset>
-        <button type="submit">Submit</button>
+        <button class="cardForm__submit qcard__button--answer" type="submit">
+          Submit
+        </button>
       </form>
     </main>
     <footer>

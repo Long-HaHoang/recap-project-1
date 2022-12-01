@@ -6,6 +6,9 @@ const questArea = document.querySelector('[data-js="questArea"]');
 const answerInput = document.querySelector('[data-js="answer"]');
 const answerArea = document.querySelector('[data-js="answerArea"]');
 const mainConent = document.querySelector('[data-js="mainContent"]');
+const tagButton = document.querySelectorAll('[data-js="cardForm__tagButton"]');
+
+let stateIndex = false;
 
 questArea.textContent = questInput.maxLength + " characters left";
 answerArea.textContent = questInput.maxLength + " characters left";
@@ -23,10 +26,7 @@ answerInput.addEventListener("input", () => {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   addCard(questInput.value, answerInput.value);
-  form.reset();
-  questArea.textContent = questInput.maxLength + " characters left";
-  answerArea.textContent = answerInput.maxLength + " characters left";
-  questInput.focus();
+  clearForm();
 });
 
 function addCard(question, answer) {
@@ -98,3 +98,54 @@ function addCard(question, answer) {
 
   newList.append(newListItem1, newListItem2, newListItem3);
 }
+
+function clearForm() {
+  form.reset();
+  questArea.textContent = questInput.maxLength + " characters left";
+  answerArea.textContent = answerInput.maxLength + " characters left";
+  questInput.focus();
+  clearButton();
+}
+
+function clearButton() {
+  tagButton.forEach((event) => {
+    event.style.removeProperty("color");
+    event.style.removeProperty("background-color");
+  });
+}
+// TODO: only works with one button
+// function setButton(event) {
+//   if (stateIndex === false) {
+//     switch (event.classList[0]) {
+//       case "cardForm__tagHTML":
+//         event.style.setProperty("background-color", "var(--html)");
+//         event.style.setProperty("color", "var(--plt1)");
+//         stateIndex = true;
+//         break;
+//       case "cardForm__tagCSS":
+//         event.style.setProperty("background-color", "var(--css)");
+//         event.style.setProperty("color", "var(--plt1)");
+//         stateIndex = true;
+//         break;
+//     }
+//   } else {
+//     switch (event.classList[0]) {
+//       case "cardForm__tagHTML":
+//         event.style.removeProperty("background-color");
+//         event.style.removeProperty("color");
+//         stateIndex = false;
+//         break;
+//       case "cardForm__tagCSS":
+//         event.style.removeProperty("background-color");
+//         event.style.removeProperty("color");
+//         stateIndex = false;
+//         break;
+//     }
+//   }
+// }
+
+tagButton.forEach((event) => {
+  event.addEventListener("click", () => {});
+});
+
+console.log(tagButton[2].dataset.state);

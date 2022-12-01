@@ -23,9 +23,87 @@ fieldset {
 }
 
 fieldset textarea {
+  padding: 10px;
   width: 100%;
+  resize: none;
+  border-radius: 5px;
 }
 
 fieldset p {
   text-align: right;
+}
+
+fieldset button {
+  border: solid;
+  border-width: thin;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 5px;
+  color: var(--plt1);
+}
+
+.cardForm__tags {
+  border: solid;
+  border-width: thin;
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+}
+
+.cardForm__tagHTML {
+  color: var(--html);
+}
+
+.cardForm__tagCSS {
+  color: var(--css);
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: var(--html);
+  border: solid var(--html);
+  border-width: thin;
+  border-radius: 3px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider:before {
+  position: absolute;
+  justify-content: center;
+  content: "#html";
+}
+
+input:checked + .slider {
+  background-color: var(--html);
+  color: var(--plt1);
+}
+
+input:focus + .slider {
+  border: solid var(--plt6);
+  border-width: thin;
 }
