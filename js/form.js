@@ -16,9 +16,11 @@ const mainConent = document.querySelector('[data-js="mainContent"]');
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+  addCard(questInput.value, answerInput.value);
+  form.reset();
 });
 
-function addCard(question) {
+function addCard(question, answer) {
   console.log("Hello, World!");
   const newSection = document.createElement("section");
   newSection.classList.add("qcard");
@@ -34,16 +36,57 @@ function addCard(question) {
   const newBookmarkSVG = document.createElement("svg");
   newBookmarkSVG.classList.add("qcard__svg");
   newBookmarkSVG.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  newBookmarkSVG.setAttribute("preserveAspectRatio", "xMidYMid meet");
+  newBookmarkSVG.setAttribute("viewBox", "0 0 48 48");
+  newBookmarkSVG.setAttribute("height", "48");
+  newBookmarkSVG.setAttribute("width", "48");
 
   const newBookmarkPath = document.createElement("path");
+  newBookmarkPath.setAttribute(
+    "d",
+    "M10 42V8.75q0-1.2.9-2.1.9-.9 2.1-.9h16.8q-1.15 1.3-1.725 2.775Q27.5 10 27.5 11.75q0 3.35 2.15 5.85 2.15 2.5 5.35 3.05.85.1 1.5.1t1.5-.1V42l-14-6Zm25-24.25v-4.5h-4.5v-3H35v-4.5h3v4.5h4.5v3H38v4.5Z"
+  );
 
   const newButtonContainer = document.createElement("div");
+  newButtonContainer.classList.add("qcard__button--container");
 
   const newButtonAnswer = document.createElement("button");
+  newButtonAnswer.setAttribute("type", "button");
+  newButtonAnswer.classList.add("qcard__button--answer");
+  newButtonAnswer.textContent = "Show Answer";
 
   const newAnswer = document.createElement("p");
+  newAnswer.classList.add("qcard__answer");
+  newAnswer.textContent = answer;
 
   const newList = document.createElement("ul");
 
-  const newListItem = document.createElement("li");
+  const newListItem1 = document.createElement("li");
+  newListItem1.classList.add("qcard__li--html");
+  newListItem1.textContent = "#html";
+
+  const newListItem2 = document.createElement("li");
+  newListItem2.classList.add("qcard__li--css");
+  newListItem2.textContent = "#flexbox";
+
+  const newListItem3 = document.createElement("li");
+  newListItem3.classList.add("qcard__li--css");
+  newListItem3.textContent = "#css";
+
+  mainConent.append(newSection);
+
+  newSection.append(
+    newHeader,
+    newBookmark,
+    newButtonContainer,
+    newAnswer,
+    newList
+  );
+
+  newBookmark.append(newBookmarkSVG);
+  newBookmarkSVG.append(newBookmarkPath);
+
+  newButtonContainer.append(newButtonAnswer);
+
+  newList.append(newListItem1, newListItem2, newListItem3);
 }
