@@ -1,0 +1,41 @@
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+footer nav {
+  position: fixed;
+  bottom: 0;
+  width: 110%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav_list {
+  box-shadow: 0 2px 5px rgb(148, 148, 148);
+  padding: 0;
+  border-radius: 20px;
+  background-color: var(--plt4);
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  height: 60%;
+}
+
+.nav_items {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-list__items a {
+  text-decoration: none;
+  fill: var(--bgc);
+}
+
+.nav-list__items a span {
+  display: none;
+}
