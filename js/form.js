@@ -25,12 +25,11 @@ form.addEventListener("submit", (event) => {
   addCard(questInput.value, answerInput.value);
   form.reset();
   questArea.textContent = questInput.maxLength + " characters left";
-  answerArea.textContent = questInput.maxLength + " characters left";
+  answerArea.textContent = answerInput.maxLength + " characters left";
   questInput.focus();
 });
 
 function addCard(question, answer) {
-  console.log("Hello, World!");
   const newSection = document.createElement("section");
   newSection.classList.add("qcard");
 

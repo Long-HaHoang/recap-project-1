@@ -2,6 +2,11 @@
 
 ## TODO:
 
+### Global
+
+- [ ] Make it reposive
+- [ ] Add a11y
+
 ### Main Page
 
 - [ ] function add to bookmark
@@ -25,5 +30,9 @@
 - [ ] style profile
 - [ ] add darkmode style
 - [ ] calculate counter
+
+### Navigation Bar
+
+- [ ] scale SVG
 
 ---

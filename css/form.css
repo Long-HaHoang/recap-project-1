@@ -1,0 +1,31 @@
+.mainContent {
+  width: 70%;
+}
+
+form {
+  background-color: var(--plt1);
+  padding: 1em;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 3px 2px 5px rgb(148, 148, 148);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  color: var(--bgc);
+}
+
+fieldset {
+  border: none;
+  width: 100%;
+}
+
+fieldset textarea {
+  width: 100%;
+}
+
+fieldset p {
+  text-align: right;
+}

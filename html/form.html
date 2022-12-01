@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../css/form.css" />
     <script src="../js/form.js" defer></script>
     <title>Recap-Project-1</title>
   </head>
@@ -12,8 +13,8 @@
     <header>
       <h1>Quiz App</h1>
     </header>
-    <main data-js="mainContent">
-      <form data-js="form">
+    <main class="mainContent" data-js="mainContent">
+      <form class="cardForm" data-js="form">
         <fieldset>
           <legend>Your question:</legend>
           <textarea
@@ -24,6 +25,7 @@
             data-js="question"
             minlength="4"
             maxlength="150"
+            required
           ></textarea>
           <p data-js="questArea"></p>
         </fieldset>
@@ -37,15 +39,16 @@
             data-js="answer"
             minlength="4"
             maxlength="150"
+            required
           ></textarea>
           <p data-js="answerArea"></p>
         </fieldset>
-        <fieldset>
+        <fieldset class="cardForm__tags">
           <legend>Tag:</legend>
           <ul>
-            <li><button>#html</button></li>
-            <li><button>#flexbox</button></li>
-            <li><button>#css</button></li>
+            <li><button type="button">#html</button></li>
+            <li><button type="button">#flexbox</button></li>
+            <li><button type="button">#css</button></li>
           </ul>
         </fieldset>
         <button type="submit">Submit</button>
