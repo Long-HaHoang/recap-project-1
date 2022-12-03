@@ -20,9 +20,9 @@
 
 ### Forms Page
 
-- [ ] adding cards to Main Page
-- [ ] Tag button function
-- [ ] style forms
+- [x] adding cards to Main Page
+- [x] Tag button function
+- [x] style forms
 
 ### Profile Page
 
