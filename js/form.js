@@ -11,6 +11,8 @@ const tagButton = document.querySelectorAll('[data-js="cardForm__tagButton"]');
 questArea.textContent = questInput.maxLength + " characters left";
 answerArea.textContent = questInput.maxLength + " characters left";
 
+// EventListener
+
 questInput.addEventListener("input", () => {
   const leftOnes = questInput.maxLength - questInput.value.length;
   questArea.textContent = `${leftOnes} characters left`;
@@ -21,31 +23,70 @@ answerInput.addEventListener("input", () => {
   answerArea.textContent = `${leftOnes} characters left`;
 });
 
-// EventListener
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  // addCard(questInput.value, answerInput.value);
-  makeCard(questInput.value, answerInput.value);
+
+  /* Tag requirement validation */
+  let requirementIndex = 0;
+  for (counter = 0; counter < tagButton.length; counter++) {
+    if (tagButton[counter].dataset.status === "active") {
+      requirementIndex++;
+    }
+  }
+  if (requirementIndex === 0) {
+    alert("Please select a tag");
+    return;
+  } else {
+    makeCard(questInput.value, answerInput.value);
+  }
+
   /* Reseting the form */
   form.reset();
   questArea.textContent = questInput.maxLength + " characters left";
   answerArea.textContent = answerInput.maxLength + " characters left";
-  questInput.focus();
 
   /* Reseting the buttons*/
   tagButton.forEach((event) => {
     event.style.removeProperty("color");
     event.style.removeProperty("background-color");
+    event.dataset.status = "inactive";
   });
+
+  questInput.focus();
 });
 
+// Looping to set button status
 tagButton.forEach((event) => {
   event.addEventListener("click", () => {
-    setButton(event);
+    if (event.dataset.status === "inactive") {
+      switch (event.classList[0]) {
+        case "cardForm__tagHTML":
+          event.style.setProperty("background-color", "var(--html)");
+          event.style.setProperty("color", "var(--plt1)");
+          event.dataset.status = "active";
+          break;
+        case "cardForm__tagCSS":
+          event.style.setProperty("background-color", "var(--css)");
+          event.style.setProperty("color", "var(--plt1)");
+          event.dataset.status = "active";
+          break;
+      }
+    } else {
+      switch (event.classList[0]) {
+        case "cardForm__tagHTML":
+          event.style.removeProperty("background-color");
+          event.style.removeProperty("color");
+          event.dataset.status = "inactive";
+          break;
+        case "cardForm__tagCSS":
+          event.style.removeProperty("background-color");
+          event.style.removeProperty("color");
+          event.dataset.status = "inactive";
+          break;
+      }
+    }
   });
 });
-
-// Making a new card hard coded
 
 /* Hard coded every element */
 // function addCard(question, answer) {
@@ -148,47 +189,30 @@ function makeCard(question, answer) {
 
   <p class="qcard__answer" data-js="answerCardInput">temp</p>
   <ul>
-    <li class="qcard__li--html" >#html</li>
-    <li class="qcard__li--css" >#flexbox</li>
-    <li class="qcard__li--css" >#css</li>
+    <li class="qcard__li--html" data-js="tagSelect">#html</li>
+    <li class="qcard__li--css" data-js="tagSelect">#flexbox</li>
+    <li class="qcard__li--css" data-js="tagSelect">#css</li>
   </ul>
   `;
   const questCardInput = tempCard.querySelector('[data-js="questCardInput"]');
   const answerCardInput = tempCard.querySelector('[data-js="answerCardInput"]');
+  const tagSelect = tempCard.querySelectorAll('[data-js="tagSelect"]');
 
   questCardInput.textContent = question;
   answerCardInput.textContent = answer;
 
-  mainContent.append(tempCard);
-}
-
-// TODO Append tags to the card.
-function setButton(event) {
-  if (event.dataset.status === "inactive") {
-    switch (event.classList[0]) {
-      case "cardForm__tagHTML":
-        event.style.setProperty("background-color", "var(--html)");
-        event.style.setProperty("color", "var(--plt1)");
-        event.dataset.status = "active";
+  for (let index = 0; index < tagButton.length; index++) {
+    switch (tagButton[index].dataset.status) {
+      case "inactive":
+        tagSelect[index].setAttribute("hidden", "");
         break;
-      case "cardForm__tagCSS":
-        event.style.setProperty("background-color", "var(--css)");
-        event.style.setProperty("color", "var(--plt1)");
-        event.dataset.status = "active";
+      case "active":
+        tagSelect[index].removeAttribute("hidden");
         break;
-    }
-  } else {
-    switch (event.classList[0]) {
-      case "cardForm__tagHTML":
-        event.style.removeProperty("background-color");
-        event.style.removeProperty("color");
-        event.dataset.status = "inactive";
-        break;
-      case "cardForm__tagCSS":
-        event.style.removeProperty("background-color");
-        event.style.removeProperty("color");
-        event.dataset.status = "inactive";
-        break;
+      default:
+        log.error("Hidden set has a problem");
     }
   }
+
+  mainContent.append(tempCard);
 }
