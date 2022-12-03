@@ -1,0 +1,59 @@
+.mainContent {
+  width: 70%;
+}
+
+form {
+  background-color: var(--plt1);
+  padding: 1em;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 3px 2px 5px rgb(148, 148, 148);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  color: var(--bgc);
+}
+
+fieldset {
+  border: none;
+  width: 100%;
+}
+
+fieldset textarea {
+  padding: 10px;
+  width: 100%;
+  resize: none;
+  border-radius: 5px;
+}
+
+fieldset p {
+  text-align: right;
+}
+
+fieldset button {
+  border: solid;
+  border-width: thin;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 5px;
+  color: var(--plt1);
+}
+
+.cardForm__tags {
+  border: solid;
+  border-width: thin;
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+}
+
+.cardForm__tagHTML {
+  color: var(--html);
+}
+
+.cardForm__tagCSS {
+  color: var(--css);
+}

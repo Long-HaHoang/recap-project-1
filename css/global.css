@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+*::placeholder {
+  font-weight: bold;
+  font-family: "Roboto";
+}
+
 :root {
   --clr: gray;
   --bgc: rgb(30, 30, 30);

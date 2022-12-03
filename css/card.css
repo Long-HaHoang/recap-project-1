@@ -1,5 +1,4 @@
 main {
-  /* background-color: wheat; */
   margin-top: 1em;
   margin-bottom: 8em;
   display: flex;
@@ -40,8 +39,6 @@ main {
 }
 
 .qcard__answer {
-  display: none;
-  /* visibility: hidden; */
   background-color: var(--plt1);
   width: 50%;
   height: auto;
