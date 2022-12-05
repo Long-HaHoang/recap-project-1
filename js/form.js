@@ -46,42 +46,42 @@ form.addEventListener("submit", (event) => {
   answerArea.textContent = answerInput.maxLength + " characters left";
 
   /* Reseting the buttons*/
-  tagButton.forEach((event) => {
-    event.style.removeProperty("color");
-    event.style.removeProperty("background-color");
-    event.dataset.status = "inactive";
+  tagButton.forEach((resetButton) => {
+    resetButton.style.removeProperty("color");
+    resetButton.style.removeProperty("background-color");
+    resetButton.dataset.status = "inactive";
   });
 
   questInput.focus();
 });
 
 // Looping to set button status
-tagButton.forEach((event) => {
-  event.addEventListener("click", () => {
-    if (event.dataset.status === "inactive") {
-      switch (event.classList[0]) {
+tagButton.forEach((setButton) => {
+  setButton.addEventListener("click", () => {
+    if (setButton.dataset.status === "inactive") {
+      switch (setButton.classList[0]) {
         case "cardForm__tagHTML":
-          event.style.setProperty("background-color", "var(--html)");
-          event.style.setProperty("color", "var(--plt1)");
-          event.dataset.status = "active";
+          setButton.style.setProperty("background-color", "var(--html)");
+          setButton.style.setProperty("color", "var(--plt1)");
+          setButton.dataset.status = "active";
           break;
         case "cardForm__tagCSS":
-          event.style.setProperty("background-color", "var(--css)");
-          event.style.setProperty("color", "var(--plt1)");
-          event.dataset.status = "active";
+          setButton.style.setProperty("background-color", "var(--css)");
+          setButton.style.setProperty("color", "var(--plt1)");
+          setButton.dataset.status = "active";
           break;
       }
     } else {
-      switch (event.classList[0]) {
+      switch (setButton.classList[0]) {
         case "cardForm__tagHTML":
-          event.style.removeProperty("background-color");
-          event.style.removeProperty("color");
-          event.dataset.status = "inactive";
+          setButton.style.removeProperty("background-color");
+          setButton.style.removeProperty("color");
+          setButton.dataset.status = "inactive";
           break;
         case "cardForm__tagCSS":
-          event.style.removeProperty("background-color");
-          event.style.removeProperty("color");
-          event.dataset.status = "inactive";
+          setButton.style.removeProperty("background-color");
+          setButton.style.removeProperty("color");
+          setButton.dataset.status = "inactive";
           break;
       }
     }

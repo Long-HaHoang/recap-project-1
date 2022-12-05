@@ -6,6 +6,7 @@
 
 - [ ] Make it reposive
 - [ ] Add a11y
+- [ ] Style pages
 
 ### Main Page
 
