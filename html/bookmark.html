@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles.css" />
+    <script src="../js/bookmark.js" defer></script>
     <title>Recap-Project-1</title>
   </head>
   <body>
@@ -14,7 +15,12 @@
     <main>
       <section class="qcard">
         <h2 class="qcard__quest">What property flips the axes in flexbox?</h2>
-        <button class="qcard__bookmark--add" type="button">
+        <button
+          class="qcard__bookmark--add"
+          type="button"
+          data-js="bookmarked"
+          data-status="inactive"
+        >
           <svg
             class="qcard__svg"
             xmlns="http://www.w3.org/2000/svg"
@@ -29,17 +35,24 @@
           </svg>
         </button>
         <div class="qcard__button--container">
-          <button class="qcard__button--answer" type="button">
+          <button
+            class="qcard__button--answer"
+            type="button"
+            data-js="buttonAnswer"
+            data-status="inactive"
+          >
             Show Answer
           </button>
           <button
             class="qcard__button--answer qcard__button--hide"
             type="button"
+            data-js="buttonAnswer"
+            data-status="inactive"
           >
             Hide Answer
           </button>
         </div>
-        <p class="qcard__answer">flex-direction</p>
+        <p class="qcard__answer" data-js="answerText" hidden>flex-direction</p>
         <ul>
           <li class="qcard__li--html">#html</li>
           <li class="qcard__li--css">#flexbox</li>
@@ -48,7 +61,12 @@
       </section>
       <section class="qcard">
         <h2 class="qcard__quest">Lorem ipsum dolor?</h2>
-        <button class="qcard__bookmark--add" type="button">
+        <button
+          class="qcard__bookmark--add"
+          type="button"
+          data-js="bookmarked"
+          data-status="inactive"
+        >
           <svg
             class="qcard__svg"
             xmlns="http://www.w3.org/2000/svg"
@@ -63,18 +81,17 @@
           </svg>
         </button>
         <div class="qcard__button--container">
-          <button class="qcard__button--answer" type="button">
-            Show Answer
-          </button>
           <button
-            class="qcard__button--answer qcard__button--hide"
+            class="qcard__button--answer"
             type="button"
+            data-js="buttonAnswer"
+            data-status="inactive"
           >
-            Hide Answer
+            Show Answer
           </button>
         </div>
 
-        <p class="qcard__answer">
+        <p class="qcard__answer" data-js="answerText" hidden>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus
           culpa consectetur, labore voluptatem error asperiores nobis omnis,
           voluptatibus soluta, iste blanditiis ab illo eligendi alias nesciunt!
