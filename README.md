@@ -10,8 +10,8 @@
 
 ### Main Page
 
-- [ ] function add to bookmark
-- [ ] function show answer
+- [x] function add to bookmark
+- [x] function show answer
 - [ ] adding cards to Bookmark Page
 
 ### Bookmark Page
