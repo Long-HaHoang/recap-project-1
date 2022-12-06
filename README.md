@@ -6,11 +6,12 @@
 
 - [ ] Make it reposive
 - [ ] Add a11y
+- [ ] Style pages
 
 ### Main Page
 
-- [ ] function add to bookmark
-- [ ] function show answer
+- [x] function add to bookmark
+- [x] function show answer
 - [ ] adding cards to Bookmark Page
 
 ### Bookmark Page
@@ -20,9 +21,9 @@
 
 ### Forms Page
 
-- [ ] adding cards to Main Page
-- [ ] Tag button function
-- [ ] style forms
+- [x] adding cards to Main Page
+- [x] Tag button function
+- [x] style forms
 
 ### Profile Page
 

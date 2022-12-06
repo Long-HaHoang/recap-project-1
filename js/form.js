@@ -1,5 +1,6 @@
 console.clear();
 
+// Form element to create a new card
 const form = document.querySelector('[data-js="form"]');
 const questInput = document.querySelector('[data-js="question"]');
 const questArea = document.querySelector('[data-js="questArea"]');
@@ -8,11 +9,11 @@ const answerArea = document.querySelector('[data-js="answerArea"]');
 const mainContent = document.querySelector('[data-js="mainContent"]');
 const tagButton = document.querySelectorAll('[data-js="cardForm__tagButton"]');
 
+// Initialize character counter
 questArea.textContent = questInput.maxLength + " characters left";
 answerArea.textContent = questInput.maxLength + " characters left";
 
 // EventListener
-
 questInput.addEventListener("input", () => {
   const leftOnes = questInput.maxLength - questInput.value.length;
   questArea.textContent = `${leftOnes} characters left`;
@@ -23,6 +24,7 @@ answerInput.addEventListener("input", () => {
   answerArea.textContent = `${leftOnes} characters left`;
 });
 
+// Submit Event
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -45,43 +47,44 @@ form.addEventListener("submit", (event) => {
   questArea.textContent = questInput.maxLength + " characters left";
   answerArea.textContent = answerInput.maxLength + " characters left";
 
-  /* Reseting the buttons*/
-  tagButton.forEach((event) => {
-    event.style.removeProperty("color");
-    event.style.removeProperty("background-color");
-    event.dataset.status = "inactive";
+  /* Reseting the buttons */
+  tagButton.forEach((resetButton) => {
+    resetButton.style.removeProperty("color");
+    resetButton.style.removeProperty("background-color");
+    resetButton.dataset.status = "inactive";
   });
 
   questInput.focus();
+  console.log(document);
 });
 
 // Looping to set button status
-tagButton.forEach((event) => {
-  event.addEventListener("click", () => {
-    if (event.dataset.status === "inactive") {
-      switch (event.classList[0]) {
+tagButton.forEach((setButton) => {
+  setButton.addEventListener("click", () => {
+    if (setButton.dataset.status === "inactive") {
+      switch (setButton.classList[0]) {
         case "cardForm__tagHTML":
-          event.style.setProperty("background-color", "var(--html)");
-          event.style.setProperty("color", "var(--plt1)");
-          event.dataset.status = "active";
+          setButton.style.setProperty("background-color", "var(--html)");
+          setButton.style.setProperty("color", "var(--plt1)");
+          setButton.dataset.status = "active";
           break;
         case "cardForm__tagCSS":
-          event.style.setProperty("background-color", "var(--css)");
-          event.style.setProperty("color", "var(--plt1)");
-          event.dataset.status = "active";
+          setButton.style.setProperty("background-color", "var(--css)");
+          setButton.style.setProperty("color", "var(--plt1)");
+          setButton.dataset.status = "active";
           break;
       }
     } else {
-      switch (event.classList[0]) {
+      switch (setButton.classList[0]) {
         case "cardForm__tagHTML":
-          event.style.removeProperty("background-color");
-          event.style.removeProperty("color");
-          event.dataset.status = "inactive";
+          setButton.style.removeProperty("background-color");
+          setButton.style.removeProperty("color");
+          setButton.dataset.status = "inactive";
           break;
         case "cardForm__tagCSS":
-          event.style.removeProperty("background-color");
-          event.style.removeProperty("color");
-          event.dataset.status = "inactive";
+          setButton.style.removeProperty("background-color");
+          setButton.style.removeProperty("color");
+          setButton.dataset.status = "inactive";
           break;
       }
     }
@@ -169,7 +172,11 @@ function makeCard(question, answer) {
 
   tempCard.innerHTML = ` 
   <h2 class="qcard__quest" data-js="questCardInput">temp</h2>
-  <button class="qcard__bookmark--add">
+  <button 
+  type ="button" 
+  class="qcard__bookmark--add" 
+  data-js="bookmarked" 
+  data-status="inactive">
     <svg
       class="qcard__svg"
       xmlns="http://www.w3.org/2000/svg"
@@ -184,10 +191,15 @@ function makeCard(question, answer) {
     </svg>
   </button>
   <div class="qcard__button--container">
-    <button class="qcard__button--answer">Show Answer</button>
+    <button 
+    type ="button" 
+    class="qcard__button--answer" 
+    data-js="buttonAnswer" 
+    data-status="inactive"
+    >Show Answer</button>
   </div>
 
-  <p class="qcard__answer" data-js="answerCardInput">temp</p>
+  <p class="qcard__answer" data-js="answerCardInput" hidden>temp</p>
   <ul>
     <li class="qcard__li--html" data-js="tagSelect">#html</li>
     <li class="qcard__li--css" data-js="tagSelect">#flexbox</li>
