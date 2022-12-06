@@ -1,29 +1,29 @@
 console.clear();
 
-const buttonAnswer = document.querySelectorAll('[data-js="buttonAnswer"]');
-const buttonAddBookmark = document.querySelectorAll('[data-js="bookmarked"]');
-const hiddenAnswer = document.querySelectorAll('[data-js="answerText"]');
+const cardAnswerButton = document.querySelectorAll('[data-js="buttonAnswer"]');
+const cardAddBookmark = document.querySelectorAll('[data-js="bookmarked"]');
+const cardAnswer = document.querySelectorAll('[data-js="answerText"]');
 
-buttonAnswer.forEach((answerButton, index) => {
+cardAnswerButton.forEach((answerButton, index) => {
   answerButton.addEventListener("click", () => {
-    if (buttonAnswer[index].dataset.status === "inactive") {
-      hiddenAnswer[index].removeAttribute("hidden");
-      buttonAnswer[index].dataset.status = "active";
-      buttonAnswer[index].textContent = "Hide Answer";
+    if (cardAnswerButton[index].dataset.status === "inactive") {
+      cardAnswer[index].removeAttribute("hidden");
+      cardAnswerButton[index].dataset.status = "active";
+      cardAnswerButton[index].textContent = "Hide Answer";
       return;
     } else {
-      hiddenAnswer[index].setAttribute("hidden", "");
-      buttonAnswer[index].dataset.status = "inactive";
-      buttonAnswer[index].textContent = "Show Answer";
+      cardAnswer[index].setAttribute("hidden", "");
+      cardAnswerButton[index].dataset.status = "inactive";
+      cardAnswerButton[index].textContent = "Show Answer";
       return;
     }
   });
 });
 
-buttonAddBookmark.forEach((bookmarkButton, index) => {
+cardAddBookmark.forEach((bookmarkButton, index) => {
   bookmarkButton.addEventListener("click", () => {
-    if (buttonAddBookmark[index].dataset.status === "inactive") {
-      buttonAddBookmark[index].innerHTML = `
+    if (cardAddBookmark[index].dataset.status === "inactive") {
+      cardAddBookmark[index].innerHTML = `
         <svg 
             xmlns="http://www.w3.org/2000/svg" 
             preserveAspectRatio="xMidYMid meet"
@@ -35,10 +35,10 @@ buttonAddBookmark.forEach((bookmarkButton, index) => {
             d="m35.8 17.75-5.3-5.3 2.1-2.15 3.2 3.2 7.4-7.45 2.15 2.15ZM10 42V8.75q0-1.2.9-2.1.9-.9 2.1-.9h14.5v3H13v28.7l11-4.65 11 4.65v-16.7h3V42l-14-6Zm3-33.25h14.5H24Z"/>
         </svg>
         `;
-      buttonAddBookmark[index].dataset.status = "active";
+      cardAddBookmark[index].dataset.status = "active";
       return;
     } else {
-      buttonAddBookmark[index].innerHTML = `
+      cardAddBookmark[index].innerHTML = `
         <svg
             class="qcard__svg"
             xmlns="http://www.w3.org/2000/svg"
@@ -52,9 +52,7 @@ buttonAddBookmark.forEach((bookmarkButton, index) => {
             />
           </svg>
         `;
-      buttonAddBookmark[index].dataset.status = "inactive";
+      cardAddBookmark[index].dataset.status = "inactive";
     }
   });
 });
-
-console.log(buttonAddBookmark[0].innerHTML);
